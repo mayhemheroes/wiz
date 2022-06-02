@@ -1,0 +1,5 @@
+project: wiz
+target: wiz
+
+cmds:
+  - cmd: /repo/bin/wiz @@ -o /dev/null -m 6502
