@@ -2,4 +2,4 @@ project: wiz
 target: wiz
 
 cmds:
-  - cmd: /repo/bin/wiz @@ -o /dev/null -m 6502
+  - cmd: /install/usr/local/bin/wiz @@ -o /dev/null -m 6502
