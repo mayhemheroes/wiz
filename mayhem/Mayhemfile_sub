@@ -1,0 +1,5 @@
+project: wiz
+target: sub
+
+cmds:
+  - cmd: /fuzz_sub
