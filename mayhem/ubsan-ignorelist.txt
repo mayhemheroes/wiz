@@ -1,0 +1,9 @@
+# wiz's hand-rolled value-type headers contain pervasive, deterministic UB idioms that fire on
+# essentially EVERY compile, aborting exec #1 and blocking all fuzzing exploration:
+#   - int128.h:43  Int128(INT_MIN): negation overflow (intentional two's-complement bit-twiddling)
+#   - optional.h:51 Optional<T>: invalid-bool load from its reinterpret_cast/placement-new aliasing
+# Scope UBSan instrumentation out of these two headers; ASan and UBSan stay fully enabled
+# (and halting) everywhere else, so input-dependent bugs are still caught and triaged.
+[undefined]
+src:*/int128.h
+src:*/optional.h

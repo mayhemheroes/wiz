@@ -1,0 +1,6 @@
+project: wiz
+target: sub
+
+cmds:
+  - cmd: /mayhem/out/fuzz_sub
+    libfuzzer: true

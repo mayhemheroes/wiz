@@ -1,0 +1,14 @@
+project: wiz
+target: wiz
+
+# In-process libFuzzer harness over the full compiler pipeline (wiz::run: options -> Parser ->
+# Compiler -> 6502 output). The previous raw file-input CLI form could not be executed by the
+# fuzz engine (mayhem-fuzz restart loop, rc 254, 0 edges), so the same code path is driven
+# in-process instead.
+cmds:
+  - cmd: /mayhem/out/fuzz_wiz
+    libfuzzer: true
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/wiz/testsuite

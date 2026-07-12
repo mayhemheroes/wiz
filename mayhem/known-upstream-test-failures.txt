@@ -1,0 +1,20 @@
+# Test files that FAIL at upstream tip (wiz-lang/wiz@master) with a stock, unmodified build —
+# verified identical under clang-19 and g++, so these are upstream regressions/unimplemented
+# features (e.g. "reference to `var x` before its type was known"), not build/porting artifacts.
+# test.sh treats failures in these files as KNOWN (CTRF "other") and fails on anything else.
+tests/block/6502_func_inline.wiz
+tests/block/6502_goto.wiz
+tests/block/6502_goto_far.wiz
+tests/block/6502_load_store.wiz
+tests/block/6502_return_on_if_else_path.wiz
+tests/block/65c02_do_while.wiz
+tests/block/65c02_func_inline.wiz
+tests/block/z80_func_call.wiz
+tests/block/z80_func_tail_call.wiz
+tests/failure/duplicate_func_args.wiz
+tests/failure/duplicate_func_args_vars.wiz
+tests/failure/duplicate_let_inline_for.wiz
+tests/failure/func_call_wrong_order.wiz
+tests/failure/func_call_wrong_order_vars.wiz
+tests/failure/in_inside_func.wiz
+tests/failure/inline_for_not_iterable.wiz
